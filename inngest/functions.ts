@@ -19,7 +19,8 @@ export const processTask = inngest.createFunction(
 export const sendDailyNews = inngest.createFunction({
     id: "send-daily-news",
     triggers: {
-        event: "test/send.daily.news"
+        // event: "test/send.daily.news"
+        cron: "0 9 * * *"
     }
 }, async ({ event, step }) => {
     // 1. 从多个RSS源获取新闻
